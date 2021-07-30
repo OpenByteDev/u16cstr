@@ -1,15 +1,18 @@
 #![no_std]
 
+pub extern crate widestring;
+pub extern crate wchar;
+
 #[macro_export]
 macro_rules! u16cstr {
     ($expression:expr) => {
-        unsafe { widestring::U16CStr::from_slice_with_nul_unchecked(wchar::wchz!(u16, $expression)) }
+        unsafe { $crate::widestring::U16CStr::from_slice_with_nul_unchecked($crate::wchar::wchz!(u16, $expression)) }
     };
 }
 
 #[cfg(test)]
 mod tests {
-    use widestring::{U16CStr, U16CString};
+    use widestring::{U16CString};
 
     #[test]
     fn basic() {
