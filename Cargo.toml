@@ -1,0 +1,17 @@
+[package]
+name = "u16cstr"
+version = "0.1.0"
+description = "A macro for creating c-style u16 wide strings at compile time."
+readme = "README.md"
+repository = "https://github.com/OpenByteDev/u16cstr"
+homepage = "https://github.com/OpenByteDev/u16cstr"
+documentation = "https://docs.rs/u16cstr"
+license = "MIT"
+authors = ["OpenByte <development.openbyte@gmail.com>"]
+edition = "2021"
+categories = []
+keywords = ["widestring", "cstring", "c-stlye", "wide", "string"]
+
+[dependencies]
+widestring = "0.4"
+wchar = "0.10"
