@@ -1,6 +1,6 @@
 # u16cstr
 
-[![Build](https://github.com/OpenByteDev/u16cstr/actions/workflows/build.yml/badge.svg)](https://github.com/OpenByteDev/u16cstr/actions/workflows/build-and-test.yml)
+[![Build](https://github.com/OpenByteDev/u16cstr/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/OpenByteDev/u16cstr/actions/workflows/build-and-test.yml)
 [![crates.io](https://img.shields.io/crates/v/u16cstr.svg)](https://crates.io/crates/u16cstr)
 [![Documentation](https://docs.rs/u16cstr/badge.svg)](https://docs.rs/u16cstr)
 [![dependency status](https://deps.rs/repo/github/openbytedev/u16cstr/status.svg)](https://deps.rs/repo/github/openbytedev/u16cstr)
