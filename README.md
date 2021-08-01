@@ -8,19 +8,18 @@
 
 A macro for creating c-style u16 wide strings at compile time.
 
-## Setup
-Add this to your `Cargo.toml`:
-```toml
-[dependencies]
-u16cstr = "0.1"
-```
-
 ## Example
 ```rust
-use u16cstr::u16cstr;
-use widestring::U16CStr;
+use u16cstr::{u16cstr, u16str};
+use widestring::{U16CString, U16String, U16CStr, U16Str};
 
-const wide_string: &U16CStr = u16cstr!("Test");
+// c-style terminated wide string
+const wide_c_string: &U16CStr = u16cstr!("Test");
+assert_eq!(wide_c_string, U16CString::from_str("Test").unwrap().as_ref());
+
+// non-terminated wide string
+const wide_string: &U16Str = u16str!("Test");
+assert_eq!(wide_string, U16String::from_str("Test").as_ref());
 ```
 
 ## License
