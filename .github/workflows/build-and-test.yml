@@ -5,14 +5,16 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+    
 env:
   CARGO_TERM_COLOR: always
-
+  
 jobs:
-  build:
-
-    runs-on: [ubuntu-latest, windows-latest]
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v2
