@@ -14,4 +14,4 @@ keywords = ["widestring", "cstring", "c-style", "wide", "string"]
 
 [dependencies]
 widestring = "0.4"
-wchar = "0.10"
+wchar = "0.11"
