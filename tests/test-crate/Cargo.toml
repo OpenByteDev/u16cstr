@@ -5,4 +5,3 @@ edition = "2018"
 
 [dependencies]
 u16cstr = { path = "../.." }
-widestring = "*"

@@ -13,5 +13,5 @@ categories = []
 keywords = ["widestring", "cstring", "c-style", "wide", "string"]
 
 [dependencies]
-widestring = "0.4"
+widestring = "0.5"
 wchar = "0.11"

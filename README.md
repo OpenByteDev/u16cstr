@@ -15,11 +15,11 @@ use widestring::{U16CString, U16String, U16CStr, U16Str};
 
 // c-style terminated wide string
 const wide_c_string: &U16CStr = u16cstr!("Test");
-assert_eq!(wide_c_string, U16CString::from_str("Test").unwrap().as_ref());
+assert_eq!(wide_c_string, U16CString::from_str("Test").unwrap().as_ucstr());
 
 // non-terminated wide string
 const wide_string: &U16Str = u16str!("Test");
-assert_eq!(wide_string, U16String::from_str("Test").as_ref());
+assert_eq!(wide_string, U16String::from_str("Test").as_ustr());
 ```
 
 ## License
