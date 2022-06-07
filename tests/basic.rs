@@ -1,5 +1,5 @@
 use u16cstr::{u16cstr, u16str};
-use u16cstr::widestring::{U16CString, U16String};
+use widestring::{U16CString, U16String};
 
 #[test]
 fn u16cstr() {
