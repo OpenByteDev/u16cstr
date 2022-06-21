@@ -3,7 +3,10 @@ use widestring::{U16CString, U16String};
 
 #[test]
 fn u16cstr() {
-    assert_eq!(u16cstr!("Test"), U16CString::from_str("Test").unwrap().as_ucstr());
+    assert_eq!(
+        u16cstr!("Test"),
+        U16CString::from_str("Test").unwrap().as_ucstr()
+    );
 }
 
 #[test]
