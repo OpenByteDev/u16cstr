@@ -1,3 +1,5 @@
+# This project has been deprecated as it is now a part of [`widestring`](https://crates.io/crates/widestring/).
+
 # u16cstr
 
 [![Build](https://github.com/OpenByteDev/u16cstr/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/OpenByteDev/u16cstr/actions/workflows/build-and-test.yml)
