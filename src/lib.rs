@@ -16,6 +16,7 @@
 //! assert_eq!(wide_string, U16String::from_str("Test").as_ustr());
 //! ```
 
+pub extern crate wchar;
 pub extern crate widestring;
 
 /// A macro for creating c-style u16 wide strings at compile time.
@@ -31,7 +32,10 @@ pub extern crate widestring;
 #[macro_export]
 macro_rules! u16cstr {
     ($expression:expr) => {{
-        $crate::widestring::u16cstr!($expression)
+        // the following would be nice to use but it is sadly not const.
+        // unsafe { $crate::widestring::U16CStr::from_slice_unchecked($crate::wchar::wchz!(u16, $expression)) }
+
+        unsafe { ::core::mem::transmute::<&'static [u16], &'static $crate::widestring::U16CStr>($crate::wchar::wchz!(u16, $expression)) }
     }};
 }
 
@@ -48,6 +52,13 @@ macro_rules! u16cstr {
 #[macro_export]
 macro_rules! u16str {
     ($expression:expr) => {{
-        $crate::widestring::u16str!($expression)
+        // the following would be nice to use but it is sadly not const.
+        // unsafe { $crate::widestring::U16Str::from_slice($crate::wchar::wch!(u16, $expression)) }
+
+        unsafe {
+            ::core::mem::transmute::<&'static [u16], &'static $crate::widestring::U16Str>(
+                $crate::wchar::wch!(u16, $expression),
+            )
+        }
     }};
 }
