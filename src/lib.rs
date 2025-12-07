@@ -2,7 +2,7 @@
 #![warn(clippy::pedantic)]
 
 //! # This project has been deprecated as it is now a part of [widestring](https://crates.io/crates/widestring/).
-//! 
+//!
 //! A macro for creating c-style u16 wide strings at compile time.
 //!
 //! ## Example
@@ -63,7 +63,8 @@ macro_rules! u16str {
         // unsafe { $crate::widestring::U16Str::from_slice($crate::wchar::wch!(u16, $expression)) }
 
         unsafe {
-            &*(::core::ptr::from_ref::<[u16]>($crate::wchar::wch!(u16, $expression)) as *const $crate::widestring::U16Str)
+            &*(::core::ptr::from_ref::<[u16]>($crate::wchar::wch!(u16, $expression))
+                as *const $crate::widestring::U16Str)
         }
     }};
 }
