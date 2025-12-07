@@ -13,9 +13,9 @@ categories = []
 keywords = ["widestring", "cstring", "c-style", "wide", "string"]
 
 [dependencies]
-widestring = { version = "1.0", default-features = false }
+widestring = { version = "1.2", default-features = false }
 wchar = { version = "0.11", default-features = false }
 
 [dev-dependencies.widestring]
-version = "1.0"
+version = "1.2"
 features = ["alloc"]
