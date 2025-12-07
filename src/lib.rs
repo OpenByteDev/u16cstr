@@ -1,4 +1,6 @@
 #![no_std]
+#![warn(clippy::pedantic)]
+
 
 //! A macro for creating c-style u16 wide strings at compile time.
 //!
@@ -34,8 +36,10 @@ macro_rules! u16cstr {
     ($expression:expr) => {{
         // the following would be nice to use but it is sadly not const.
         // unsafe { $crate::widestring::U16CStr::from_slice_unchecked($crate::wchar::wchz!(u16, $expression)) }
-
-        unsafe { ::core::mem::transmute::<&'static [u16], &'static $crate::widestring::U16CStr>($crate::wchar::wchz!(u16, $expression)) }
+        
+        unsafe {
+            &*(::core::ptr::from_ref::<[u16]>($crate::wchar::wchz!(u16, $expression)) as *const $crate::widestring::U16CStr)
+        }
     }};
 }
 
