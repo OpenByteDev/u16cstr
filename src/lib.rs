@@ -61,9 +61,7 @@ macro_rules! u16str {
         // unsafe { $crate::widestring::U16Str::from_slice($crate::wchar::wch!(u16, $expression)) }
 
         unsafe {
-            ::core::mem::transmute::<&'static [u16], &'static $crate::widestring::U16Str>(
-                $crate::wchar::wch!(u16, $expression),
-            )
+            &*(::core::ptr::from_ref::<[u16]>($crate::wchar::wch!(u16, $expression)) as *const $crate::widestring::U16Str)
         }
     }};
 }
