@@ -1,6 +1,6 @@
 [package]
 name = "u16cstr"
-version = "0.5.0"
+version = "0.6.0"
 description = "A macro for creating c-style u16 wide strings at compile time."
 repository = "https://github.com/OpenByteDev/u16cstr"
 homepage = "https://github.com/OpenByteDev/u16cstr"
