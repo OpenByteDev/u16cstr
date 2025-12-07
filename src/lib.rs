@@ -1,6 +1,8 @@
 #![no_std]
 #![warn(clippy::pedantic)]
 
+//! # This project has been deprecated as it is now a part of [widestring](https://crates.io/crates/widestring/).
+//! 
 //! A macro for creating c-style u16 wide strings at compile time.
 //!
 //! ## Example
